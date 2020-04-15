@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const morgan = require(`morgan`)
 const expressJWT = require('express-jwt')
-require("dotenv").config()
+require("./client/node_modules/dotenv").config()
 // ... other imports 
 const path = require("path")
 
