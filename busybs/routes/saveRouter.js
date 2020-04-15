@@ -1,6 +1,6 @@
 const express = require('express')
 const Save = express.Router()
-const Users = require('/Users/travisracisz/dev/assignments/busybs/models/Users.js')
+const Users = require('../models/Users.js')
 
 
 // updates user with new recipe Id

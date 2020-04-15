@@ -1,6 +1,6 @@
 const express = require('express')
 const Auth = express.Router()
-const Users = require('/Users/travisracisz/dev/assignments/busybs/models/Users.js')
+const Users = require('../models/Users.js')
 const jwt = require('jsonwebtoken')
 
 
