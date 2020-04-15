@@ -33,10 +33,11 @@
     "unirest": "^0.6.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "proxy": "http://localhost:9000",
   "eslintConfig": {
