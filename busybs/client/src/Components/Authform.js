@@ -35,8 +35,8 @@ function Authform(){
     const { username, password } = inputs
 
     return( 
-        <div> 
-            {toggle ? 
+        <div className = "auth-form"> 
+            {!toggle ? 
             <>
                 <input 
                 type = "text"

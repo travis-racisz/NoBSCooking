@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import {Link} from "react-router-dom"
-import "/Users/travisracisz/dev/assignments/busybs/src/CSS/styles.css"
+import "../CSS/styles.css"
 import { faHome, faSignInAlt, faSearch, faUser, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RecipeContext } from "../context/recipeContext";

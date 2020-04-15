@@ -203,6 +203,16 @@ hr{
   
 }
 
+.auth-form{ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1pt solid black; */
+  border-radius: 10pt;
+  padding: 5pt; 
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 .select-css { 
 	display: block;
