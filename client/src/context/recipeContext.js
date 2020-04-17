@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useAlert } from 'react-alert'
 
 export const RecipeContext = React.createContext()
 const userAxios = axios.create()
@@ -12,6 +13,7 @@ userAxios.interceptors.request.use(config => {
 })
 
 function RecipeProvider(props){ 
+    const alert = useAlert()
     const initState = { 
         user: JSON.parse(localStorage.getItem("user")) || {},
         token: localStorage.getItem("token") || "", 
@@ -81,10 +83,24 @@ function RecipeProvider(props){
                     ...prev, 
                     user: res.data
                 }))
+                alert.show("Succesfully Saved Recipe")
             })
             .catch(err => console.log(err))
     }
-    
+
+    function deleteRecipe(id){ 
+        userAxios.put(`/api/save/delete/${id}`)
+            .then(res => { 
+                localStorage.setItem("user", JSON.stringify(res.data))
+                setUserState(prev => ({ 
+                    ...prev, 
+                    user: res.data
+                }))
+                alert.show("Succesfully deleted Recipe")
+            })
+            .catch(err => console.log(err))
+    }
+
     function getUsersInfo(id){ 
         userAxios.get(`api/save/${id}`)
         .then(res => {
@@ -109,7 +125,8 @@ function RecipeProvider(props){
             signup, 
             logout,
             saveRecipe, 
-            getUsersInfo
+            getUsersInfo,
+            deleteRecipe
         }}>
 
             {props.children}

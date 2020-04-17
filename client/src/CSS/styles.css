@@ -119,12 +119,18 @@ main {
     margin-top: auto; 
   }
 
+  .main-home-container1{ 
+    position: relative;
+  }
+
 .main-home{ 
   background-color: white;
   display: flex; 
-  width:50vw; 
-  height:auto; 
-  margin-left: 16rem;
+  max-width:50vw; 
+  height:auto;
+  position: relative;
+  left:50%; 
+  transform: translateX(-50%);
   border-radius: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex-direction: column;
@@ -400,9 +406,12 @@ button{
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   }
   .main-home{ 
-    width: 80vw; 
-    height: 75%; 
-    margin-left: 2rem;
+    max-width: fit-content; 
+    min-width: 50vw; 
+    height: auto;
+    position: relative;
+    left:50%; 
+    transform: translateX(-50%);
   }
   .form-container{ 
     border: 5px solid white; 

@@ -1,13 +1,15 @@
-import React from "react"
-
+import React, {useContext} from "react"
+import {RecipeContext} from "../context/recipeContext"
 
 function RandomRecipes(props){ 
+    const { token, saveRecipe } = useContext(RecipeContext)
         const {recipe} = props
         const boldTitle = { 
             fontWeight: 'bold', 
             marginBottom: '10pt', 
         }
-        let i = 1
+        console.log(recipe)
+        console.log(token)
     return ( 
         <>
         {recipe.recipes && recipe.recipes.map(recipe => 
@@ -21,6 +23,9 @@ function RandomRecipes(props){
                     <span className = "recipe-content2" style = {boldTitle}>Instructions  <hr width = "30%"></hr><br></br>
                     <div>{recipe.analyzedInstructions[0] !== undefined ? recipe.analyzedInstructions[0].steps.map(step => <p className = "recipe-content3"><b>step {step.number}</b>  {step.step}</p>) : ""}</div>
                     </span> 
+                    <div className = "button-group">
+                        {token ? <button onClick = {() => saveRecipe(recipe.id)}>Save</button> : ""}
+                </div>
             </div>)
                     )}
         </>

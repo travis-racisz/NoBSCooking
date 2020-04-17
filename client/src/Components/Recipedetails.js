@@ -50,7 +50,7 @@ function Recipedetails(){
             <img alt = "img" src = {`https://spoonacular.com/recipeImages/${recipeDetails.data && recipeDetails.data.id}-636x393.jpg`}></img>
             <h4 className = "subtitle">ready in {recipeDetails.data && recipeDetails.data.readyInMinutes}</h4>
             <h4 className = "subtitle">serves {recipeDetails.data && recipeDetails.data.servings}</h4>
-            <div className = "ingredients-list">
+            <div className = "recipe-content2">
                <b style = {boldTitle}>Ingredients</b> 
                
                 <ul> {recipeDetails.data && recipeDetails.data.extendedIngredients.map(ingredient => <p className = "recipe-content4">{ingredient.original}</p>)}</ul>

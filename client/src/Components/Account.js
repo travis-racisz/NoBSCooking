@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import axios from "axios"
+import { RecipeContext } from "../context/recipeContext"
 
 function Account(){ 
     const [ accountInfo, setAccountInfo ] = useState([])
     const userData = JSON.parse(localStorage.getItem("user"))
     const uniqueValues = getUniqueValues(userData.recipes)
     const recipes = uniqueValues.join(",")
+    const { deleteRecipe } = useContext(RecipeContext)
     console.log(recipes)
 
     useEffect(() => { 
@@ -36,20 +38,24 @@ function Account(){
         .catch(err => console.log(err))
     }
 
+    const boldTitle = { 
+        fontWeight: 'bold', 
+        marginBottom: '10pt', 
+    }
 
     console.log(accountInfo)
     return(
-        <div> 
-            <h1> Welcome, {userData.username}</h1> 
+        <div className = "main-home-container"> 
+            <h1 Style = {boldTitle}> Welcome, {userData.username}</h1> 
 
-            <h4>Saved Recipes </h4>
+            <h4 className = "recipe-content2">Saved Recipes </h4>
             {accountInfo[0] && accountInfo[0].map(item => 
              <div className = "main-home"> 
                 <img className = "image" key = {item.id} alt = "image not found" src ={`https://spoonacular.com/recipeImages/${item.id}-636x393.jpg`}></img>
                 <h1 key = {item.title} className = "recp-title">{item.title}</h1>
                 <h4 key = {item.readyInMinutes} className = "recp-sub-title">Ready in {item.readyInMinutes} minutes</h4>
                 <h4 key = {item.servings} className = "recp-sub-title">Serves {item.servings}</h4>
-                <div className = "ingredients-list">
+                <div className = "recipe-content2">
                <b >Ingredients</b> 
                
                 <ul> {item.extendedIngredients && item.extendedIngredients.map(ingredient => <p className = "recipe-content4">{ingredient.original}</p>)}</ul>
@@ -57,6 +63,7 @@ function Account(){
             <div> <b>Instructions</b>
                 {item.analyzedInstructions[0] && item.analyzedInstructions[0].steps.map(step => <ul className = "recipe-content3"><b>step {step.number}.</b> {step.step}<br></br></ul>)}
             </div>
+            <button style = {{color: "red"}} onClick = {() => deleteRecipe(item.id)}>Delete</button>
             </div>
                 )}
 

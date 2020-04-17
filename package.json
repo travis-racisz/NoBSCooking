@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/travis-racisz/NoBSCooking/issues"
   },
-  "homepage": "https://github.com/travis-racisz/NoBSCooking#readme"
+  "homepage": "https://github.com/travis-racisz/NoBSCooking#readme",
+  "devDependencies": {}
 }
