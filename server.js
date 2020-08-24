@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/busybs",{
 
 
 app.use("/auth", require("./routes/authRouter.js"))
-app.use("/api", expressJWT({secret: process.env.SECRET}))
+app.use("/api", expressJWT({secret: process.env.SECRET, algorithms: ['HS256']}))
 app.use("/api/save", require("./routes/saveRouter.js"))
 
 
