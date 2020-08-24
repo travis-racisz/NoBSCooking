@@ -5,8 +5,8 @@ import { RecipeContext } from "../context/recipeContext"
 function Account(){ 
     const [ accountInfo, setAccountInfo ] = useState([])
     const userData = JSON.parse(localStorage.getItem("user"))
-    const uniqueValues = getUniqueValues(userData.recipes)
-    const recipes = uniqueValues.join(",")
+    const uniqueValues = getUniqueValues(userData?.recipes)
+    const recipes = uniqueValues?.join(",")
     const { deleteRecipe } = useContext(RecipeContext)
     console.log(recipes)
 
@@ -16,7 +16,7 @@ function Account(){
 
     function getUniqueValues(array){ 
         let uniqueArray = []
-        for(let i=0; i < array.length; i++){
+        for(let i=0; i < array?.length; i++){
             if(uniqueArray.indexOf(array[i]) === -1) {
                 uniqueArray.push(array[i]);
             }
@@ -46,7 +46,7 @@ function Account(){
     console.log(accountInfo)
     return(
         <div className = "main-home-container"> 
-            <h1 Style = {boldTitle}> Welcome, {userData.username}</h1> 
+            <h1 Style = {boldTitle}> Welcome, {userData?.username}</h1> 
 
             <h4 className = "recipe-content2">Saved Recipes </h4>
             {accountInfo[0] && accountInfo[0].map(item => 
