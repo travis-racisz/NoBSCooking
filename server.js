@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI,{
     useUnifiedTopology:true, 
     useCreateIndex:true, 
     useFindAndModify:false,
-}, () => console.log("Database is connected"))
+}, () => console.log('db is connected'))
 
 
 app.use("/auth", require("./routes/authRouter.js"))
