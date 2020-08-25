@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(morgan(`dev`))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-mongoose.connect(process.env.MONGODB_URI,{ 
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://Brucepotality:BWwttsabgcf10$!@cluster0.owtxb.mongodb.net/nobscooking?retryWrites=true&w=majority",{ 
     useNewUrlParser:true, 
     useUnifiedTopology:true, 
     useCreateIndex:true, 
