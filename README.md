@@ -1,6 +1,6 @@
 
 ## Available Scripts
-from the base directory run npm i
+from the base directory run npm i <br >
 cd into the client directory and run npm i
 
 ### `npm start`
