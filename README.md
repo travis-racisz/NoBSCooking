@@ -43,4 +43,5 @@ cd client
 npm start
 
 ```
-
+## Usage
+after npm start open localhost:3000 in your local broswer to use the app 
