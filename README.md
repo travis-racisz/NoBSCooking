@@ -7,12 +7,6 @@ simple recipe site made using React.js, Node.js, Mongoose, and Express
 * [Technologies](#technologies)
 * [Setup](#setup)
 
-from the base directory run "npm install" in your terminal <br >
-then run "nodemon server.js" to run the server <br >
-cd into the client directory and run "npm install" again, this will ensure that both the front end and the back end dependecies are installed. then run "npm start"<br >
-
-
-
 ### Technologies 
 * React: 16.13.1
 * Mongoose: 5.9.7 
