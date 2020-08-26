@@ -1,8 +1,8 @@
 
 ## Available Scripts
-from the base directory run npm i in your terminal <br >
-then run nodemon server.js to run the server <br >
-cd into the client directory and run npm i again, this will ensure that both the front end and the back end dependecies are installed. then run npm start<br >
+from the base directory run "npm install" in your terminal <br >
+then run "nodemon server.js" to run the server <br >
+cd into the client directory and run "npm install" again, this will ensure that both the front end and the back end dependecies are installed. then run "npm start"<br >
 
 
 
