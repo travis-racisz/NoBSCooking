@@ -1,4 +1,3 @@
-NOBSCOOKING README 
 
 ## NoBSCooking - Recipes without the BS 
 simple recipe site made using React.js, Node.js, Mongoose, and Express 
@@ -17,9 +16,9 @@ simple recipe site made using React.js, Node.js, Mongoose, and Express
 * JSONwebtoken: 8.5.1
 * Morgan: 1.10.0
 
-## setup 
-To run this project, clone the repository locally: 
-
+## Setup 
+To run this project, clone the repository locally: <br />
+run these commands 
 ``` 
 npm i 
 cd client 
